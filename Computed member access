@@ -1,0 +1,43 @@
+[] is the computed member access operator. Inside the brackets , the result is computed and then delivered.
+- an example
+var array = [ 
+    "string",
+    100,
+    [ "embed", 200 ],
+    { car: "ford" },
+    function(){ return "drive"; }
+];
+
+array[0]   //returns "string"
+array[4]   //returns function(){ return "drive"
+in order to make sure that the function runs and not just prints itself, so, write array[4]() 
+array[3].car OR array[3]["car"]   //returns "ford"
+
+- whatever is present inside [] is treated as a javascript statement and is computed.
+-an example
+a=10;
+array[a-5-2];   //Computed value will be array[3] and thus will give "{ car: "ford" } "
+
+- an example
+var car = {
+    make: "volvo",
+    speed: 160,
+    engine: {
+        size: 2.0,
+        make: "bmw",
+        fuel: "petrol",
+        pistons:[
+            { maker: "BMW" },
+            { maker: "BMW2" }
+        ]
+    },
+    drive: function(){ return "drive"; }
+};
+car.engine   //returns {size: 2, make: "bmw", fuel: "petrol", pistons: [{maker: "BMW"}, {maker: "BMW2"}]}
+car.engine.pistons   //returns [{maker: "BMW"}, {maker: "BMW2"}]
+car.engine.pistons[0]     //returns {maker: "BMW"}
+car.engine.pistons[0].maker   //returns "BMW"
+
+car.drive   //returns function(){ return "drive"; }
+car.drive()   //returns "drive"
+
