@@ -1,0 +1,13 @@
+- Hoisting is a way in which a variable can be used before it has been declared.
+- Basically, the variable is called in the first line before it was even declared. It should give an error, but it doesnt. Because the variable is hoisted i.e. it is declared and not initialised. thus it will show the value of the variable to be "undefined". this creates a memory pointer that is undefined i.e. no value defined in it and it is pointing to a blank piece of memory.
+console.log( myName );
+var myName = "Lawrence";
+console.log( myName );
+the result is:
+undefined
+"Lawrence"
+
+- in case of functions, if that symbol/ function points to a callable object, it hoists that to the top.
+
+
+
