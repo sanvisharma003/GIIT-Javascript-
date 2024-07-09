@@ -1,0 +1,23 @@
+- Arrays are objects!
+- To add a new element in the array, find the index and then use assignment operator to assign the new value.
+var array = [ "string", 100 ];
+array[2] = "Hello"
+so the array would look like [ "string", 100, "Hello"]
+- If we assign a number like array[20], it will create 16 null elements in between, that take space.
+- An another way of creating is 
+array["test1"] = "Test1"
+array.test2 = "Test2"
+but as a result the array no longer behaves as a list.
+
+- array.length; returns length of array
+- array.shift(); Delete's first element and shifts it
+- array.pop(); Delete's last element and pops the end
+- array.unshift( "new", "values" ); Add new values to the beginning of the array
+- array.push( "ending", "values" ); Add new values to the end of the array seperated by commas.
+- Splice can do anything. splice( point, delete, add values... )
+- array.splice( 2(start), 2(no of elements)) would delete 2 elements from positions array[2].
+- array.splice( 1(start), 0(no elements to delete), (add any number of elements here) "new elemets", [], {}, 200, 300, function(){} );
+
+
+
+
