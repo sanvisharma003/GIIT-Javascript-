@@ -1,0 +1,41 @@
+- Functions are callable objects.
+function name( )
+{    
+    var fullname = "Sanvi Sharma"
+    return fullname;
+}
+when the object is called, i.e. name, the entire function is returned. but when function name() is called, then the function runs and returns fullname.
+- Objects within objects.
+function name( )
+{    
+    var fullname = "Sanvi Sharma";
+    function concat( name )
+    {
+      return "Ms."+name;
+    }
+    return concat(fullname);
+}
+
+- we can send an object as a parameter to the function and then invoke it so that it could be used.
+function name( fullname )
+{    
+    return fullname.firstname + fullname.lastname;
+}
+var obj = { firstname: "Lawrence", lastname: "Turton"  };
+console.log( name(obj) );
+
+- we can make nested functions or objects. 
+var obj is a function that returns 'Running'. so, it is sent to an another function embed as the parameter run. and then this function assigned to parameter run is executed. 
+function embed( run )
+{
+    return run();
+}
+
+var obj = function() { return "Running" }
+console.log( embed( obj ));
+
+
+
+
+
+
