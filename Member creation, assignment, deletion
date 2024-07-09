@@ -1,0 +1,33 @@
+ASSIGNMENT
+- we can target a member and then change it entirely. the old assignments would be deleted and the new would come into effect.
+- an example
+intially, the car object looked like this
+var car = {
+    make: "volvo",
+    speed: 160,
+    drive: function(){ return "drive"; }
+};
+we can change it and so the object would be lost and car would now become a string.
+car="volvo"
+
+-in order to target a single member of the car object, simply write 
+car.make = "jaguar"
+
+CREATION
+- In order to create a new member in an object, you can simply write something like
+car.model="ss80" and the new result will be 
+{make: "Ford Chevy", speed: 4, engine: Object, model: "ss80", stop: function}
+
+- if we just want to add a new property without defining it, then it will not be added.
+car.color
+{make: "Ford Chevy", speed: 4, engine: Object, model: "ss80", stop: function}
+no changes in the object, and it remains same.
+
+- only after assigning the value, changes will be made.
+car.color='red'
+{make: "Ford Chevy", speed: 4, engine: Object, model: "ss80", stop: function, color: "red"}
+
+DELETION
+- a property can be deleted by using the 'delete' keyword. 
+delete car.color
+
