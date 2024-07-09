@@ -1,0 +1,39 @@
+- Scopes tells about the access levels or defined parameters. javascript has 3 types of scopes
+block, function, global
+function and block scopes are both local.
+
+LOCAL SCOPE
+- let and const provide block level scopes which means that if they are defined inside {}, they cannot be accessed from outside the block.
+{
+  let a=10
+}
+console.log( a );   //a is not accessible here
+
+FUNCTION SCOPE
+- Similarly, if a variable is defined inside a function, then its scope is there only and it is not visible outside the function.
+function func()
+{
+  var a=10;
+  console.log(a);
+}
+func();
+console.log(a);
+the result will 
+10
+error
+
+GLOBAL SCOPE
+- if you declare a variable globally, then it will be accessible from everywhere and anywhere in the code.
+var p = 10;
+function func()
+{
+  var a=10;
+  console.log(a);
+  console.log(p);
+}
+func();
+console.log(p);   //p will be avilable everywhere
+
+- Execution stacks store execution contexts of various functions i.e. callable objects.
+- Garbage Collection- once the execution gets completed, the variables and all get disposed off and and cannot be used or accessed. The garbage collector simply deletes those values.
+- when we simply encapsulate execution stack/ main thread with symbol table, then it is called Outer Execution Environment which is temporary space.
