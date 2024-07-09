@@ -1,0 +1,35 @@
+MEMBER ACCESS
+.(dot) is the member access operator
+
+- an example
+var car = {
+    make: "volvo",
+    speed: 160,
+    engine: {
+        size: 2.0,
+        make: "bmw",
+        fuel: "petrol",
+        pistons:[
+            { maker: "BMW" },
+            { maker: "BMW2" }
+        ]
+    },
+    drive: function(){ return "drive"; }
+};
+here, car is object, engine is an object inside car object and pistons is an array of objects inside engine object.
+car.engine or car["engine"];
+car.engine.size;
+car.drive();
+car.engine.pistons[0];
+car.engine.pistons[0].maker or car["engine"]["pistons"][1]["maker"];
+
+- an example
+var array = [ 
+    "string",
+    100,
+    [ "embed", 200 ],
+    { car: "ford" },
+    function(){ return "drive"; }
+];
+here, writing array[4]; will print/return 'function(){ return "drive"' as it as. 
+so in order to execute this function, write array[4](); 

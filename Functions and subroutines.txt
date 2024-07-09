@@ -1,0 +1,35 @@
+- In HTML code, anything that comes between <script></script> tags is basically JavaScript.
+- You can  write the javascript code inscript or in some other file and then tag it to the HTML code
+  <script src="file_name.js"></script>
+
+FUNCTIONS OR SUBROUTINES
+- console.log
+  console is used to target the console window present in the browser.
+  log is used to output the value to the console.
+  console.log( "Hello world" );
+- You could log out primitive types. and so it makes easier to see whats happening with the data.
+  var num = 10;
+  console.log( num );
+
+- function func_name (parameter1, parameter2 ... )
+  {
+
+  }
+  function(Keyword) that defies that the following is a subroutine.
+  func_name(Symbol) that points(addresses) something in memory.
+  parameters(Variables) where parameters are assigned while working.
+  inside these {} are the set of instructions.
+- func_name(2,3 ...)
+  this will invoke the function along with the arguments.
+- an example 
+function makeCoffee( sugar, milk )
+{
+    var instructions = "Boil water,";
+    instructions += " pour into cup,";
+    instructions += " add coffee granules,";
+    instructions += " add " + sugar + " spoons of sugar,";
+    instructions += " add " + milk + "% milk.";
+    return instructions;
+}
+console.log( makeCoffee( 2, 20 ) );
+

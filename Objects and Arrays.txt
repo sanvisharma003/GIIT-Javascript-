@@ -1,0 +1,35 @@
+OBJECTS AND ARRAYS
+- arrays are list of objects and are iterable.
+- objects have attributes and subroutines (methods). They are defined by braces {}
+- an example of object
+var car = {
+color: "red",
+speed: 200,
+drive: function(){return drive;}
+};
+this is an object car that has attributes like colour, speed and an another function that returns "drive"
+- an example of array
+var list = ["Dog", "cat", ... ]
+
+EMBEDDING OBJECTS AND ARRAY
+- an example array embeded iin object
+var car = {
+make: "volvo",
+speed: 200,
+engine: {
+size: 2.0,
+make: "bmw",
+fuel: "petrol",
+pistons:["piston1", "piston2"]
+}
+};
+here, we are embedding object inside of an object and we are also embedding the array in the object.
+- an example of object embedded in array
+var array = [
+"name", 
+[10,20,30], 
+{car: "Ford"}, 
+function(){return "Drive"}
+];
+
+

@@ -1,0 +1,24 @@
+#String
+  -"He said "Hello""  //gives an error because of the placement of ""
+  -"He said \"Hello\""  //use \" instead
+
+#Integer
+#Float
+#Boolean
+#Null/ Undefined
+  -it means that the container is empty i.e. no value assigned.
+#NaN (Not a Number)
+
+#Variables
+  var fname = 23;
+  var lname;
+
+Javascript is a loosely typed language, i.e. we can assign different data types to the same variable.
+
+#Constant
+  const fname='Sanvi';  //the value stored in fname variable would remain same throughout.
+
+#different operators have different precedence. It follows BODMAS rule.
+
+#Assignment operators
++ - * / % **(power)
