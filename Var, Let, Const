@@ -1,0 +1,5 @@
+ECMAScript was created to standardize JavaScript. 
+- The keywords var, let, and const define the variable scope and behavior. The var keyword has function scope while the let and const keywords have block scope.
+- VAR has the Global scope or function scope which means variables defined outside the function can be accessed globally, and variables defined inside a particular function can be accessed within the function.
+- LET variables has the block scope. It can’t be accessed outside the particular code block ({block}). It does not support hoisting.
+- CONST has all the properties that are same as let keyword, also, they are mainly used to create constant variables whose values cannot be changed once they are initialized with a value and they also have the block scope. 
