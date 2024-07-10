@@ -1,0 +1,17 @@
+== (equality) compares what is on left to right. it correct, it returns true else false. case sensitive. but is does not compares the datatype as its shows that 10 is equal to "10"
+=== (strict equality) avoids this and also compares the datatypes.
++ is used as a polymorph as it could be used for concatenation, or for addition.
+!= not equals to. returns true is not equal to else false.
+> greater than. returns true or false.
+>= greater than and equal to. returns true or false.
+< less than. returns true or false.
+<= less than and equal to. returns true or false.
+
+IF STATEMENT
+- whatever condition gives true, it is executed, also we can add as many else if statements.
+if ( condition )
+else if ( condition )
+else
+- different operators can be chained together in the conditions like 
+&&(and) here both of the side conditions should be true in order to proceed further
+or(||) here, either of the condition can be true and the execution will proceed.
