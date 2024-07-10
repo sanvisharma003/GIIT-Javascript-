@@ -1,0 +1,14 @@
+- Constructors are functions that could be called by a program dynamically to create an object or instance. Basically, these are blueprints of that object.
+- According to the naming convention, the constructor function's name is always started with capital letter.  this helps in differentiating it by other normal functions.
+function Apple(x,y,color)
+{
+  this.x = x;
+  this.y = y;
+  this.color = color;
+}
+- it is invoked by using 'new' keyword, as we donot want this = window object.
+new Apple(10,20,"red");
+- in order to refer to this object made, it should be returned to a var.
+var apple1 = new Apple( 10, 20, "red", 200 );
+var apple2 = new Apple( 100, 200, "green", 50 );
+var apple3 = new Apple( 20, 200, "pink", 10 );
