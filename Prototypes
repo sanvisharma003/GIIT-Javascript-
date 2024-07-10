@@ -1,0 +1,69 @@
+- Prototypes are shared objects that have properties and methods that can be accessed via different objects. These are used when there are properties and all that are not unique to those or some objects. 
+Example - There are cars of different color and specifications which are unique to them, but they also have a common verb that is 'drive'. so, in order to avoid this replication of verbs at instance level, prototypes are used.
+
+Apple1
+{
+  color = 'red';
+  weight = 20;
+  eat();
+  throw();
+}
+Apple2
+{
+  color = 'green';
+  weight = 34;
+  eat();
+  throw();
+}
+Apple3
+{
+  color = 'pink';
+  weight = 12;
+  eat();
+  throw();
+}
+- prototype can be cretaed so that the common properties can be shared among the objects. prototype is connected to all apple objects. This saves a lot of memory.
+Apple1
+{
+  color = 'red',;
+  weight = 20;
+}
+Apple2
+{
+  color = 'green';
+  weight = 34;
+}
+Apple3
+{
+  color = 'pink';
+  weight = 12;
+}
+Apple.prototype = {
+eat(), throw()
+}
+
+CONSTRUCTOR PROTOTYPES
+- Here, as we have created 3 objects of Apple type, there will be 3 copies of these common eat() and throw(). this will lead to memory wastage.
+
+function Apple( color, weight)
+{
+  this.color = color;
+  this.weight = weight;
+  this.eat = function(){ return "Eat the apple"};
+  this.throw = function(){ return "Throw the apple"};
+}
+
+var apple1 = new Apple("red", 20);
+var apple2 = new Apple("green", 34);
+var apple3 = new Apple("pink", 12);
+
+- 
+function Apple( color, weight)
+{
+  this.color = color;
+  this.weight = weight;
+}
+Apple.prototype = {
+  this.eat : function(){ return "Eat the apple"},
+  this.throw : function(){ return "Throw the apple"}
+};
