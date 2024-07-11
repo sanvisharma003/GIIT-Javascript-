@@ -1,0 +1,63 @@
+- DOM acts as an advocate, that helps in interacting with some window (HTML) object. Document object is just a visual representation of the original documents and not the document itself and it has nodes and child nodes.
+- through the directory structure of DOM, we can access the HTML elements, but it isnt feasible. 
+Document is a global variable that has certain elements that can be accessed by writing their names. Certain methods can be run that target these specific elements. 
+- an example
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Javascript Essentials</title>
+    </head>
+    <body>
+        <p id="hello">hello world</p>
+        <p class="pClass">123</p>
+        <p data-content="123">345</p>
+        <h1>Javascript Essentials
+            <span> Hello</span>
+        </h1>
+        <script src="myapp.js"></script>
+    </body>
+</html>
+
+- document.getElementByTagName('p');   //will target all the <p> tag elements and return them
+ 
+- If we want to get an elememnt by its id, it needs to have an id. then, you can just write the id name in the tag and the element will then be provided.
+document.getElementById("Hello");   // this will return just 1 single object that is prepresented by the id of hello.
+- if you use dir(document.getElementById("Hello")), then an object will be returned and not just the element. It basically prints an interacted list.
+console.dir(document.getElementById("Hello"));
+- Classname will return several elements as an ARRAY
+document.getElementsByClassName("pClass");
+
+- HTML block loads so, if we put the javascript file in header (knowing that it is too long), then the page would take longer to load. So, it is advisable to put the <script> </script> at the bottom of the body.
+- Also remember that these does not make a whole new object, they just return a reference or pointer in memory to where this object is residing.
+var pHello = document.getElementById('hello');
+pHello.innerText = "new world";
+
+- innerText returns all text contained by an element and all its child elements while innerHtml returns all text, including html tags, that is contained by an element.
+pHello.innerHTML += " order <span>hello world</span>";
+
+- The outerText property sets or returns the text content of the specified node while outerHTML property sets or returns the HTML element, including attributes, start tag, and end tag.
+pHello.outerHTML = '<h2 id="hello">new world order <span>hello world</span></h2>';
+
+- innerHTML = HTML inside the selected element.
+outerHTML = HTML inside the selected Element + HTML of the selected element.
+<div>
+<span>Hello there!</span>
+</div>
+innerHTML : here if you do innerHTML on div, it will return object containing <span> only.
+outerHTML: if you do the outerHTML on div you will get an object containing div and span inside that.
+
+- querySelectorAll returns an array of all the tags inside the specified one.
+var spanH1 = document.querySelectorAll('h1 span');
+spanH1[0].innerHTML = "new text here!!";
+
+CHANGING ELEMENT'S STYLE
+- in order to change, you need to follow a certain rules with the document object. first, you target the element, then target the style properties and finally assign values.
+var el = document.getElementById('style');
+el.style.backgroundColor = "blue";
+el.style.color = "White";
+el.style.width = "400px";
+
+- same could also be done by the cssText property, where all of these values can be assigned in one go by writing them as a string.
+el.style.cssText = "background: turquoise; color: white; height: '400px'; width:'400px'";
+
