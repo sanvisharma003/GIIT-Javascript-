@@ -1,0 +1,34 @@
+- Events are signals fired inside the browser window that notify of changes in the environment. Event handler code can be created that will run when an event fires, allowing to respond appropriately to change.
+- So, when an event occurs, there are a set of sunroutines or instructions that starts executing and handle the interaction.
+- the event names begin with word 'ON' like onclick, ondragover etc. also, it may seem like only one inline function can be executed at once, but multiple eventlisteners can be grouped together.
+
+An example 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Dropdown Menu</title>
+</head>
+<body>
+    <script src="myapp.js"></script>
+    <label for="cars">Choose a car:</label>
+    <select id="cars" name="cars" onclick="console.log('ohh.. you clicked?')">
+        <option value="volvo">Volvo</option>
+        <option value="bmw">BMW</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+        <option value="tesla">Tesla</option>
+    </select>
+</body>
+</html>
+
+var el= document.getElementsByName('cars')[0];
+el.onclick = function(event){
+    console.log('oh.. you clicked?');
+};
+function clickcall(event)
+{
+  console.log("clicked by add event listener");
+}
+el.addEventListener('click', clickcall);
