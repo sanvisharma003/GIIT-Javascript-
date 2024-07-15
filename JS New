@@ -1,0 +1,28 @@
+- in javascript, the primitive types store their values directly in the variables.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Dropdown Menu</title>
+</head>
+<body>
+    <script>
+        var cust_name= "sanvi";
+        var balance= "30cr";
+        var x, y;
+        var isvalid =true;
+        document.write(cust_name);
+        document.write(balance);
+        document.write(isvalid);
+        document.write(x,y);
+    </script>
+    
+</body>
+</html>
+
+- in order to know the type of data of a particular variable at runtime, simply use the operator 'typeof'
+document.write(typeof cust_name+"<br>");
+- typeof works well on all datatypes except NULL. so, in order to find out whether it is null, use '===' comparison operator. it will return True. 
+This operator not only compares the values but the data types too and hence help identify NULL!
+- the '==' operator converts athe datatypes and just sompare the values. Basically, if the value is same but datatypes are different, yhen also we will get 'True'.
