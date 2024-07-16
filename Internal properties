@@ -1,0 +1,32 @@
+- when we put some value for an object's property, then JS engine uses the put method but when we overwrite the existing value then the set method is used.
+- if we want to check whether some property exists in an object, we can use 'in' operator.
+var student1 = {
+  name: "sanvi", 
+  score: 95, 
+};
+console.log("name" in student1);   //returns true
+console.log("class" in student1);   //returns false
+
+- objects can inherit properties from other objects too. 
+console.log("toString" in student1);   //returns true even though it is not owned by the object itself. but it is inherited or borrowed by some other objects. so, to avoid this, we can use hasOwnProperty()
+console.log(student1.hasOwnProperty("toString");   //returns false
+
+- in order to remove a property of the object, use delete keyword
+delete student1.name;
+
+- All properties in JS have a flag called 'enumerable' that helps in retrieving them. 
+for(var eachProperty in student)
+{
+  console.log(eachProperty);   //this gives the name of the property
+  coonsole.log(student[eachProperty]);   //this will give the value stored in that property
+}
+- the keys that are the names of all the properties of the object can be retrieved by saving it in an array. 
+var allpro = Object.keys(obj_name);
+for(var i=0; i<allpro.length; i++)
+{
+  console.log(allpro[i]);
+  console.log(student[allpro[i]]);
+}
+
+
+
