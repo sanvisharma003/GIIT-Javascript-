@@ -1,0 +1,74 @@
+SOME FUNCTIONS AVAILABLE
+var s1= "YOU are the CREATOR of your OWN destiny";
+document.write(s1.toLowerCase()+"<br>");
+document.write(s1.toUpperCase()+"<br>");
+document.write(s1.substring(8,15)+"<br>");
+document.write(s1.charAt(15)+"<br>");
+document.write(x.toString()+"<br>");
+document.write(typeof x.toString()+"<br>");
+
+REFERENCE TYPES AND CLASS
+- We can create objects using reference types. These are closest to what we call class.
+- Objects here are a list of properties that have a name and a value. Name is always a string while value is anything of any datatype or function.
+
+OBJECTS
+- JS has an inbuilt genertic type called 'Object' and a 'new' keyword that assign it to a reference variable and that can be used as
+var obj1 = new Object();
+- Object variables point to a memory location where the objects are stored. If we assign obj2 to obj1 then it obj2 will not be assigned  new location like primitive types, instead it will point to the same location as obj1.
+- JS allows to add properties dynamically to the Object types.
+var obj1= new Object();
+var obj2= obj1;
+obj1.myproperty= "OH ho ho ho";
+document.write(obj1.myproperty+"<br>");
+document.write(obj2.myproperty+"<br>");
+- Js do not have garbage collector, so in order to free the memory, assign 'null' to the objects.
+obj1 = null;
+obj2 = null;
+
+OTHER REFERENCE LITERALS
+- There are other reference types available too like arrays, date, error, function, object, regular expression etc.
+- in order to instantiate these 
+var arr = new Array();
+var date = new Date();
+var error = new Error("somethings wrong");
+var funct = new Function("document.write('Hello world')");
+
+- objects can be made by various ways 
+type 1
+var student1 = {name: "sanvi", score: 95};
+document.write(student1.name);
+type 2
+var student2 = new Object();
+student2.name = "sanvi";
+student2.score = 98;
+document.write(student2.name);
+
+Arrays
+- We can directly make the array
+var arr1 = ["Mango", "Orange", "Strawberry"];
+here, we are passing the array values to the constructor
+var arr2 = new Array("Mango", "Orange", "Strawberry");
+document.write(arr2[1]);
+
+Functions
+- it is advised to use literal syntax for creating a function as it is easy to use, clear and debug.
+function hello(name)
+{
+  return "Hello "+ name;
+}
+var name="sanvi";
+document.write(hello(name));
+
+- To identify what is the type of any given literal, use 'instancof Object', 'instancof Array', 'instancof Function'. It returns True or False values at runtime.
+
+WRAPPER TYPES
+- all primitive types have their wrapper types that are used as objects.
+var temp = new String("Arise and Awake");
+
+
+
+
+
+
+
+
