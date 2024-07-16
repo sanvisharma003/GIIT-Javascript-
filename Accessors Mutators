@@ -1,0 +1,15 @@
+- Accessors and mutators helps in accessing the data. underscore(_) is used to tell JS engine that some property is private and accessors should be used ito access them. 
+var creditCard = {
+  _name: "Sanvi", 
+  get name()
+  {
+    return this._name;
+  },
+  set name(value)
+  {
+    this._name = value;
+  }
+};
+console.log(creditCard.name);   //this would use the accessor property and it will be returned through tthe get property.
+creditCard.name = "Bob"   //the name is accessed through set property.
+- the get and set are accessor properties and not methods. and the _variable can only be accessed using these.
