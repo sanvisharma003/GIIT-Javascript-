@@ -1,0 +1,46 @@
+- Function can be defined in 2 ways that are declaration way
+function func()
+{
+  return "hello";
+}
+func();
+and the expression way
+var answer = function(){ return "hello"; }
+
+the key diffrence is that in the expression way, there is no name of the function and it is always assigned to a variable.
+- Each function is a reference type/ object. so, when we use the declaration way, internally, a 'new' variable function is created and is assigned to the function name 
+func = new function()
+- Code hoisting happens in JS. 
+- JS takes any number of parameters in a function i.e. we can pass many parameters at runtime and it will not give any errors. only the first of these arguments will be used in the function calls.
+- if we want to use these, then use 'arguments' variable. it is an array like data structure.
+document.write(arguments[2]);
+document.write(arguments.length);
+- JS also have the way to find the properties of various functions. like if we want to find the no of named parameters passed in a function, then use 
+document.write(function_name.length);
+
+FUNCTION OVERLOADING 
+- function overloading leads to a problem here in JS i.e. the engine only consideres the last function by overriding here.
+function add(num1, num2)
+{
+  return num1+num2;
+}
+function add(num1, num2, num3)
+{
+  return num1+num2+num3;
+}
+document.write(add(3,4));
+- so, in order to implement overloading we can modify and use other data structures
+function add(num1, num2)
+{
+  if(arguments.length==3)
+    return arguments[0]+arguments[1]+arguments[2];
+  else
+    return arguments[0]+arguments[1];
+}
+
+
+      
+
+
+
+
