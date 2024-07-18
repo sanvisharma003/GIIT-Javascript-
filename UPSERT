@@ -1,0 +1,31 @@
+- The UPSERT operation is a combination of INSERT and UPDATE operations. This operation allows us to either insert a row or skip the insert operation if a row already exists and update that row instead.
+- UPSERT is like an insert when you dont pass any primary key that is needed to identify unique values. 
+- It is faster as it doesn't require a read before writing and only works for primary key conflicts.
+- In MySQL there is no UPSERT command, but instead 
+
+- Method 1: MERGE Statement
+The MERGE statement allows to join source table with target table based on a specific condition, and then perform an action such as an update or insert based on the results of the join.
+
+- Method 2: INSERT ... ON DUPLICATE KEY UPDATE
+The best method for implementing an upsert in current version of MySQL
+INSERT INTO table_name(col1, col2, ...) VALUES(val1, val2, ...) ON DUPLICATE KEY UPDATE;
+
+SELECT * FROM employee;
++-------------+------------+-----------+
+| employee_id | first_name | last_name 
++-------------+------------+-----------+
+ 1000         | Jane       | Johnson   |
++-------------+------------+-----------+
+
+INSERT INTO employee (employee_id, first_name, last_name)
+VALUES (1000, 'Sanvi', 'Sharma')
+ON DUPLICATE KEY UPDATE
+first_name = VALUES(first_name),
+last_name = VALUES(last_name);
+
++-------------+------------+-----------+
+| employee_id | first_name | last_name 
++-------------+------------+-----------+
+ 1000         | Sanvi      | Sharma    |
++-------------+------------+-----------+
+
