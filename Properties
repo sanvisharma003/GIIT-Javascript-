@@ -1,0 +1,2 @@
+- Every object properties have certain attributes. some of these are attributes are for data properties while some are only for accessor properties. while some attributes are common to both. 
+- Configurable properties are by default TRUE. This attribute determines whether some attribute or property can be modified or not.
