@@ -1,0 +1,4 @@
+- node_modules - stores all the webdriverIO related dependencies needed to run the code.
+- package.json - heart of the project. it tells about all the dependencies that are needed to be downloaded from the internet. run 'npm install' to download the information and store in node_modules.
+- test/specs - stores all the sample and non sample test cases. test folder has other subfolder called specs. each test file is called a spec file.
+- wdio.conf.spec - this file is like a test runner. programmer needs to give all the specifications, instances and frameworks etc.
