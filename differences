@@ -1,0 +1,14 @@
+- ECMAScript: ECMAScript (often abbreviated as ES) is the official standard for the JavaScript language. The latest version, ES2020, was released in June 2020 and includes new features such as optional chaining and nullish coalescing.
+
+- ECMAScript 6 (ES6): ES6, also known as ECMAScript 2015, was a major update to the JavaScript language and added many new features such as classes, modules, and arrow functions.
+
+- ECMAScript 5 (ES5): ES5 is the previous version of the JavaScript language and is widely supported by web browsers. It is the version of JavaScript that most people are familiar with and is the baseline for many current JavaScript libraries and frameworks.
+
+- ECMAScript 4 (ES4): ES4 was a proposed update to the JavaScript language that was never officially released. It was intended to add many new features and capabilities to the language, but it faced opposition from some members of the JavaScript community and was ultimately abandoned.
+
+var - It is the oldest way to declare a variable in JavaScript. they have function-level scope. They also have "hoisting" behavior.
+
+let - was introduced in ECMAScript 6 (also known as ES6) as an alternative to "var". Variables declared with "let" have the block-level scope. They also have the concept of the temporal dead zone, which means they are not accessible before they are declared.
+
+const - was also introduced in ECMAScript 6 and is used to declare variables that cannot be reassigned. this have the block-level scope, and, they are not accessible before they are declared.
+
