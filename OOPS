@@ -1,0 +1,32 @@
+- classes are introduced from ES6 engine. objects are called instance of the class.
+class Person
+{
+  age = 25
+  get location()
+  {
+    return "India"
+  }
+  constructor(fname, lname)
+  {
+    this.fname = fname;
+    this.lname = lname;
+  }
+}
+console.log(Person.location())
+let person1 = new Person("Tim","Joseph")
+
+- when you put 'get' before a methods name, it becomes a property.
+- constructor is a method that executes by default when an object of the class is generated. it is made by help of a keyword "constructor". 
+- fname and lname are called instance variables. so when the object is created, the values that are passed at runtime will be assigned to instance variables.
+
+
+- classes can be exported and used by others. it can be done through
+module.exports = class Person
+{
+  ...
+}
+this class can be used by 'const Person = require ('./file_name_path/')'
+
+- Inheritance is a way through which the objects inherit the properties and the methods from the other objects. It enables code reuse and structuring of relationships between objects, creating a hierarchy where a child object can access features of its parent object. 
+- the constructor along with the arguments and everything should be same in both parent and child classes.
+
