@@ -1,0 +1,57 @@
+- from MOCHA framework, we have
+describe (title ,function()
+{
+  in this function, we have to write all the 'it' blocks that store all test cases to run.
+})
+
+same thing happens with the 'it blocks' too
+it("title", function()
+{
+  //webdriver io code
+})
+
+- in JS, we have a concept of anonymous functions. such func do not have a name and only a body. they are identified by ()=>
+- now, in order to open the browser and go to a certain URL, there is a global object available 
+browser.url("provide the url of the page here")
+
+- problem with JS is that there is no way to ensure that the code runs line after line only. it is ASYNCHRONOUS i.e. no guarantee of the sequence. every step returns a promise resulting in execution of that step.
+- we need to run the test runner 'wdio.conf.js'
+npx wdio run ./wdio.conf.js --spec ./test/specs/FirstTest.js
+- 'assertions' compare expected vs actual values
+
+describe("Ecommerce Application", function()
+{
+    it("Login Fail Page", async function()
+    {
+        await browser.url("https://rahulshettyacademy.com/loginpagePractise/")
+        console.log(await browser.getTitle())
+        await expect(browser).toHaveTitleContaining("Rahul Shetty")
+
+        //CSS Selector, Xpath
+        await $("input[name='username']").setValue("rahulshettyacademy")
+        await browser.pause(3000)
+        await $("input[name='password']").setValue("rahulshettyacademy")
+        await $("#signInBtn").click()
+        console.log(await $(".alert-danger").getText())
+        await browser.waitUntil(async ()=> await $("#signInBtn").getAttribute('value') === 'Sign In', 
+        {
+            timeout: 5000,
+            timeoutMsg: "Error message not visible"
+        })
+        console.log(await $(".alert-danger").getText())
+    })
+
+})
+
+- while creating the CSS selector, we have 2 ways to do so
+id - #id this is the css selector for id property
+class - .className
+- usually the execution is very fast and so in order to slow it down, we can use 'await browser.pause(3000)' that would pause the browser(here for 3000 milliseconds) for the given time before executing the next step.
+- difference between waituntil and pause is that if used pause, then the browser will wait for the specified time and whether the action completes or not, it will continue with next task. while if waituntil is used then it will wait until the current execution happens.
+-
+
+
+
+
+
+
