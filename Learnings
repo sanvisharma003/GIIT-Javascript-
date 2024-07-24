@@ -1,0 +1,61 @@
+- Assertion determines the state of the application whether it is the same what we are expecting or not. If the assertion fails, then the test case is failed and stops the execution. webdriverIO supports browser related assertions.
+
+RADIO BUTTONS
+- if we check the classname or a locator and more than one element is present under it then those elements need to be saved as array elements.
+'$' returns the first element present while '$$' will give all the elements under.
+
+const radioButtons = await $$(".radiotextsty")
+radioButtons[0] stores Admin and radioButtons[1] stores User
+const userDropdown = radioButtons[1]
+await userDropdown.click()
+
+- there are chaining locators. in the parent locator, we can simply add the child locator by specifying the tag name.
+await userDropdown.$("span").click()
+userDropdown ids the parent locator, and $("span") is the child locator (i.e. the first span will be picked)
+chaining locators help in reducing the span of the search by assigning a parent locator.
+
+- in order to validate if something is selected 
+console.log(await $$(".customradio")[0].$("span").isSelected()) returns Boolean value
+
+DROPDOWNS
+- values in drop downs can be selected in many ways 
+await dropDown.selectByAttribute('value','teach')   //getting selected on the basis of attribute
+await dropDown.selectByVisibleText("Consultant")   //here it is getting selected on the basis of what is visible on the screen
+await dropDown.selectByIndex(0)   //can also be done on the basis of index values
+one important thing to note is that these options work only when the dropdown is on select tag.
+
+CHAI ASSERTIONS
+- Chai is an assertion library for JavaScript frameworks. Chai offers different assertion styles such as should, expect, or assert, allowing developers to choose their preferred syntax. 
+
+describe("UI control Test Suite", function()
+{
+    it("UI controls", async function()
+    {
+        await browser.url("https://rahulshettyacademy.com/loginpagePractise/")
+        await $("input[name='username']").setValue("rahulshettyacademy")
+        await $("input[name='password']").setValue("learning")
+
+        const radioButtons = await $$(".customradio")
+        const userDropdown = radioButtons[1]
+        await userDropdown.$("span").click()
+
+        const modal= await $(".modal-body")
+        await modal.waitForDisplayed()
+        await $("#cancelBtn").click()
+        
+        const dropDown = await $("select.form-control")
+        await dropDown.selectByAttribute('value','teach')
+        await dropDown.selectByVisibleText("Consultant")
+        await dropDown.selectByIndex(0)
+
+        await $("#signInBtn").click()
+    })
+}) 
+
+- the lists can be printed and selected usinf if statement
+for(var i=0; i<await items.length; i++)
+{
+  console.log(await items[i].getText())
+  if (await items[i].getText()=="India")
+    await items[i].click()
+}
