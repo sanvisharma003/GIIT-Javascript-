@@ -1,0 +1,55 @@
+- if we just have the type and no id or name, then we can store the values in an array like structure and access using the index.
+it("CheckBoxes identification", async()=>
+    {
+        await browser.url("https://rahulshettyacademy.com/AutomationPractice/")
+        const el = await $$("input[type ='checkbox']")
+        await el[1].click()
+        console.log(await el[1].isSelected())
+        await browser.pause(3000);
+    })
+
+- sometimes when the page behaves weirdly and not according to the requirements then we can take screenshots in order to know how does it look like at the moment
+await browser.saveScreenshot("screenshot_name.jpg")
+
+SCROLL
+- it might be possible that the element that needed to be workd upon is not even in the sight and hence we need to scroll to bring it into view.
+describe('Functional Testing', async ()=>
+{
+    it('Scrolling and mouse hover', async ()=>
+    {
+        await browser.url("https://rahulshettyacademy.com/AutomationPractice/")
+        await $('#mousehover').scrollIntoView()
+        await $('#mousehover').moveTo()
+        await $("=Top").click()
+    })
+})
+
+ALERTS
+- Alerts generated are not a part of the webpage to handle. it is not web based instead it is a java pop up that does not have any html code.
+and we know that wedriverIO is only for handeling web related stuff. 
+
+import { expect } from 'chai';    //at the top
+
+await $('button').doubleClick();
+console.log(await browser.isAlertOpen());
+expect(await browser.isAlertOpen()).to.be.true;
+expect(await browser.getAlertText()).to.equal("You double clicked me.. Thank You..");
+await browser.acceptAlert();
+await browser.pause(3000);
+
+SORT
+
+it('web table Validation', async () => 
+    {
+        await browser.url("https://rahulshettyacademy.com/seleniumPractise/#/offers")
+        await $("tr th:nth-child(1)").click()
+        let veggieLoc= await $$("tr td:nth-child(1)")
+        let vegNames= await veggieLoc.map(async veg => await veg.getText())
+        console.log(vegNames)
+        vegNames=await vegNames.slice()
+        let sortedveg= await vegNames.sort()
+        console.log(sortedveg)
+        //expectchai(vegNames).to.equal(sortedveg)
+    })
+
+
