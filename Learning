@@ -1,0 +1,21 @@
+SEARCH TABLE 
+- The searching of an element can be automated and then compared by putting chai assertions.
+it("search table", async ()=>
+    {
+        await browser.url("https://rahulshettyacademy.com/seleniumPractise/#/offers")
+        await $("input[type='search']").setValue("tomato")
+        const veggieLoc= await $$("tr td:nth-child(1)")
+        await expect(veggieLoc).toBeElementsArrayOfSize({eq:1})
+        console.log(await veggieLoc[0].getText())
+        await expect(await veggieLoc[0].toHaveTextContaining("Tomato"))
+        //let vegNames= await veggieLoc.map(async veg => await veg.getText())
+        
+    })
+
+HANDLING WINDOWS AND FRAMES
+- in order to handle the window if it switches, 
+const hand = await browser.getWindowHandles()
+await browser.switchToWindow(hand[1])
+- if we want to pause our browser and switch to some other one, it can be done using
+await browser.newWindow("new window url")
+
