@@ -1,0 +1,40 @@
+describe("Upload picture", async ()=>
+{
+    it("login", async()=>
+    {
+        //open main page
+        await browser.url("http://localhost/mediawiki/index.php/Main_Page");
+        await (await $(".oo-ui-buttonElement-button")).waitForDisplayed()
+        await browser.pause(3000)
+
+        await $(".oo-ui-flaggedElement-progressive .oo-ui-buttonElement-button").click()
+        await $("#usr-login").click()
+        await (await $("#firstHeading")).waitForDisplayed()
+        
+        //login
+        await $("input[name='wpName']").setValue("Sanvi2003")
+        await $("input[name='wpPassword']").setValue("Sanvi@2003")
+        await browser.pause(3000)
+        await $("#wpLoginAttempt").click()
+        
+        //go to upload section
+        await (await $("#firstHeading")).waitForDisplayed()
+        await $("#ga-btn").click()
+        await $("#ga-enhanced-standard-uis-filelist").click()
+        await browser.pause(3000)
+
+        await (await $("#firstHeading")).waitForDisplayed()
+        await $("#enhanced-filelist-upload-file").click()
+        await (await $("#firstHeading")).waitForDisplayed()
+        await browser.pause(3000)
+
+        //click upload button
+        const fileInput = await $("input.oo-ui-inputWidget-input[type='file']")
+        await fileInput.setValue('/Users/sanvisharma/Desktop/20240308_170235.jpeg')
+        await browser.pause(3000)
+
+        await $(".oo-ui-flaggedElement-progressive").click()
+        await browser.pause(30000)
+
+    })
+})
