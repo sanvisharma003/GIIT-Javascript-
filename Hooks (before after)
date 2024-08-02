@@ -1,0 +1,22 @@
+Hooks are blocks of code that run before or after each scenario in an execution cycle. Hooks are great when you need to do some initial setup in your tests before actually running the tests or maybe do some clean up after your tests. Basically, some kind of logic you need to implement before or after your test, you could use hooks for that. And that could be after each test file or even after each individual test.
+
+- 'before' block comes in describe block and stores the elements that are not specific to a task or testcase but are common. 
+basically if you want to go to a site and then run test case scenerios, then make a before block where you can open this page and then in each of the test case, you can just type your specific code.
+- 'beforeEach' is that this particular block will run before all the test cases.
+
+before(()=>
+{
+  //some task to perform
+});
+
+- 'after' block stores the element or task that needed to be done after all the test cases are completed running.
+after(()=>
+{
+  //some task to perform
+});
+
+- 'afterEach' will make that action run after each testcase runs.
+afterEach(()=>
+{
+  browser.refresh()
+});
