@@ -1,0 +1,12 @@
+- The wait commands are essential when it comes to executing Selenium tests. They help to observe and troubleshoot issues that may occur due to variation in time lag.
+
+- Selenium WebDriver provides three commands to implement waits in tests.
+Implicit Wait
+Explicit Wait
+Fluent Wait
+
+- Implicit Wait directs the Selenium WebDriver to wait for a certain measure of time before throwing an exception. 
+- By using the Explicit Wait command, the WebDriver is directed to wait until a certain condition occurs before proceeding with executing the code.
+
+- Assertions are validations that help in making sure that the application behaviour is working as expected. there are hard and soft type assetions. basically we can have an actual value and an expected value. 
+expect(browser).toHaveTitle("  ")
