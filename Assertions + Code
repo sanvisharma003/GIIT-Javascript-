@@ -1,0 +1,40 @@
+- Assertions are used to validate specific conditions in script.
+soft - do not throw assert exception even when one test case fails and continues to execute.
+hard - throws exception and stops the execution as soon as any test case fails.
+
+- "expect" gives you access to a number of "matchers" that let you validate different things on the browser, an element or mock object.
+await expect($ (myElem)).toHaveAttribute('data', 'div[Some\u00a0Value')
+await expect($ (myElem)).toHaveText('Some\u00a0Text')
+
+describe("Upload picture", async ()=>
+{
+    before(async ()=>
+    {
+        await browser.url("http://localhost/mediawiki/index.php/Main_Page")
+        browser.maximizeWindow()
+        await (await $(".oo-ui-buttonElement-button")).waitForDisplayed()
+        
+    })
+
+    it("login", async()=>
+    {
+        await $(".oo-ui-flaggedElement-progressive .oo-ui-buttonElement-button").click()
+        await $("#usr-login").click()
+        await (await $("#firstHeading")).waitForDisplayed()
+        
+        //login
+        await $("input[name='wpName']").setValue("sanvi2003")
+        await $("input[name='wpPassword']").setValue("sanvi@2003")
+        await $("#wpLoginAttempt").click()
+        await expect($ (".mw-page-title-main")).toHaveText("Main Page")
+    })
+
+    it("Upload", async()=>
+    {
+        await $(".bi-gear-fill").click()
+        await $("#ga-enhanced-standard-uis-filelist").click()
+
+        await (await $("#firstHeading")).waitForDisplayed()
+        await expect($ ("#firstHeading")).toHaveText("File list")
+    })
+})
