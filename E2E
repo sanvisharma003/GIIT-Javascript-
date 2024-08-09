@@ -1,0 +1,34 @@
+- To identify the element on the basis of its text, use partial link (*=txt). that is if this txt is present partially in any item of the webpage then the test will pass.
+but to get exact match, use (=txt)
+REMEMBER TO USE THIS ONLY ON LINKS I.E.THE ELEMENTS THAT HAVE ANCHOR <a> TAGS.
+
+
+describe("End to End", ()=>
+{
+    it ("login", async()=>
+    {
+        await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
+        await $("input[name='username']").setValue("rahulshettyacademy");
+        await $("//input[@type='password']").setValue("learning");
+        await $("#signInBtn").click();
+        await $("*=Checkout").waitForExist();
+    });
+
+    it("cart", async()=>
+    {
+        const check = await $("*=Checkout")
+        const card = await $$("div[class='card h-100']");
+        const prod = ["iphone X","Blackberry"];
+        for(let i=0; i<await card.length; i++)
+        {
+            const c = await card[i].$("div h4 a")
+            
+            if(prod.includes(await c.getText()))
+            {
+                console.log("hello beautiful.. i am under water")
+                await card[i].$(".card-footer button").click();
+            }
+        }
+        await check.click();
+    })
+})
