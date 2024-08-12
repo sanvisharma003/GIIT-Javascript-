@@ -1,0 +1,42 @@
+MAIN FILE
+const log = require('../pageobjects/LoginPage')
+describe("Page object model", async()=>
+{
+    it("Login", async()=>
+    {
+        await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
+        await browser.pause(3000);
+        await log.Login("rahulshettyacademy", "learning");
+        await browser.pause(3000);
+    })
+})
+
+  
+FILE TO IMPORT
+class LoginPage 
+{
+    get inputUsername () 
+    {
+        return $("input[name='username']")
+    }
+
+    get inputPassword () 
+    {
+        return $("#password")
+    }
+
+    get signIn () 
+    {
+        return $("#signInBtn")
+    }
+
+    async Login(username, password)
+    {
+        console.log("hello.. i am under the water")
+        await this.inputUsername.setValue(username);
+        await this.inputPassword.setValue(password);
+        await this.signIn.click();
+    }
+}
+
+module.exports=new LoginPage();
