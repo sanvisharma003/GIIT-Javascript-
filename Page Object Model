@@ -1,0 +1,73 @@
+- writing page object directly in the test cases is not advised. The locators should generally come from separate files. so that if something changes then all the test cases should get updated.
+- locators from single page are put into a separate javascript files and hence into separate classes. as, if there are duplicate locators then they wont collide
+- inside Test/Specs folder, make another one called pageObjects and then inside this folder, make different files.
+- locators can either be defined as properties or by using getter methods.
+get syntax binds an object property to a function. the getter method can be called by using 'this' property refering to the current object class.
+
+async Login(username, password)
+{
+    await this.username.setValue(username);
+    await this.password.setvalue(password);
+    await this.signIn.click();
+}
+
+- this class will be used in other file and so, exported the object of this class as 
+module.exports=new LoginPage();
+export should be the last line of this code file. and it can be imported to any other file.
+- this file can be imported and then catched in a constant
+const login = require('../pageobjects/LoginPage')
+
+
+class LoginPage 
+{
+    get inputUsername () 
+    {
+        return $("input[name='username']")
+    }
+
+    get inputPassword () 
+    {
+        return $("#password")
+    }
+
+    get signIn () 
+    {
+        return $("#signInBtn")
+    }class LoginPage 
+{
+    get inputUsername () 
+    {
+        return $("input[name='username']")
+    }
+
+    get inputPassword () 
+    {
+        return $("#password")
+    }
+
+    get signIn () 
+    {
+        return $("#signInBtn")
+    }
+
+    async Login(username, password)
+    {
+        console.log("hello.. i am under the water")
+        await this.inputUsername.setValue(username);
+        await this.inputPassword.setValue(password);
+        await this.signIn.click();
+    }
+}
+
+module.exports=new LoginPage();
+
+    async Login(username, password)
+    {
+        console.log("hello.. i am under the water")
+        await this.inputUsername.setValue(username);
+        await this.inputPassword.setValue(password);
+        await this.signIn.click();
+    }
+}
+
+module.exports=new LoginPage();
