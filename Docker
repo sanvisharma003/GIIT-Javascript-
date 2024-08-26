@@ -1,0 +1,9 @@
+- Docker is a set of Platforms as a service (PaaS) products that use Operating system-level virtualization to deliver software in packages. It provides the ability to package and run an application in a loosely isolated environment called a container. 
+-  Containers are lightweight and the isolation/security lets you run many containers simultaneously on a given host. 
+- The following are the some of the key components of Docker:
+Docker Engine: It is a core part of docker, that handles the creation and management of containers.
+Docker Image: It is a read-only template that is used for creating containers, containing the application code and dependencies.
+Docker Hub: It is a cloud based repository that is used for finding and sharing the container images.
+Dockerfile: It is a script that containing instructions to build a docker image.
+Docker Registry : It is a storage distribution system for docker images, where you can store the images in both public and private modes.
+- Docker makes use of a client-server architecture. The Docker client talks with the docker daemon which helps in building, running, and distributing the docker containers. The Docker client runs with the daemon on the same system or we can connect the Docker client with the Docker daemon remotely. With the help of REST API over a UNIX socket or a network, the docker client and daemon interact with each other.
