@@ -1,0 +1,9 @@
+- Cypress is a next generation front end testing tool built for the modern web that can test anything that runs in a browser and surface insights into how to improve the health of your test suite and the quality of your application.
+- Features
+  - Cypress takes snapshots as your tests run. 
+  - Cypress automatically waits for commands and assertions before moving on.
+  - Cypress uses fast, consistent and reliable tests.
+  - Run tests within family browsers locally.
+- Cypress was originally designed to run end-to-end (E2E) tests. A typical E2E test visits the application in a browser and performs actions via the UI like a real user.
+- Cypress Component Testing provides a component workbench to quickly build and test components.
+- Cypress is installed locally, it additionally tap into the operating system for automation tasks. This makes performing tasks such as taking screenshots, recording videos, general file system operations and network operations possible.
